@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "A web application for keeping track of your expenses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joax49/Expense-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joax49/Expense-Tracker/issues"
+  },
+  "homepage": "https://github.com/joax49/Expense-Tracker#readme"
+}
