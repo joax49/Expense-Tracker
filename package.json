@@ -1,13 +1,11 @@
 {
-  "dependencies": {
-    "express": "^5.1.0"
-  },
   "name": "expense-tracker",
   "version": "1.0.0",
   "description": "A web application for keeping track of your expenses",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev" : "node --watch .src/server.js",
+    "dev": "node --watch ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/joax49/Expense-Tracker/issues"
   },
-  "homepage": "https://github.com/joax49/Expense-Tracker#readme"
+  "homepage": "https://github.com/joax49/Expense-Tracker#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  }
 }
