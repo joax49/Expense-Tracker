@@ -46,3 +46,12 @@ export async function getPassword(user) {
     const password = await pool.query(`SELECT password FROM users WHERE username = ?`, user)
     return password
 }
+
+//EXPENSES QUERIES
+
+//A function that returns all the expenses
+export async function getAllExpenses() {
+    const allExpenses = await pool.query('SELECT * FROM expenses')
+    const allExpensesDetails = await pool.query('SELECT * FROM expenses_details')
+    return allExpenses, allExpensesDetails
+}
