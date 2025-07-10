@@ -1,6 +1,6 @@
 import express from 'express'
 import bcrypt from 'bcrypt'
-import { registerUser, getPassword } from '../db.js'
+import { registerUser, getPassword } from '../dbFunctions/users.js'
 
 const authRouter = express.Router()
 authRouter.use(express.json())

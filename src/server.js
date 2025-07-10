@@ -3,6 +3,7 @@
 //Modules
 import express from 'express'
 import authRouter from './routes/auth.js'
+import { expensesRouter } from './routes/expenses.js'
 
 //Setting constants
 const app = express()
