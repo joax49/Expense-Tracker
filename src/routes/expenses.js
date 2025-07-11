@@ -16,17 +16,38 @@ expensesRouter.post('/newExpense', async (req, res) => {
 })
 
 expensesRouter.get('/allExpenses', (req, res) => {
-    const expenses = getAllExpenses()
+    const {expenses, expenseItems} = getAllExpenses()
 
     if (!expenses) return res.status(404).send("There is no items in the expenses")
 
-    return expenses.then(result => res.status(201).send(result[0]))
+    res.status(200).send(expenses, expenseItems)
 })
 
 expensesRouter.post('/expensesByDate', (req, res) => {
     const {fromDate, toDate} = req.body
 
     const {expenses, expenseItems} = getExpensesByDate(fromDate, toDate)
-    console.log(expenses, expenseItems)
-    res.status(201).send("hellow")
+    res.status(200).send(expenses, expenseItems)
+})
+
+expensesRouter.post('/expensesByPrice', (req, res) => {
+    const {floorPrice, roofPrice} = req.body
+
+    const {expenses, expenseItems} = getExpensesByPrice(floorPrice, roofPrice)
+    res.status(200).send(expenses, expenseItems)
+})
+
+expensesRouter.post('/expensesByType', (req, res) => {
+    const {types} = req.body
+
+    const {expenses, expenseItems} = getExpensesByType(types)
+    res.status(200).send(expenses. expenseItems)
+})
+
+expensesRouter.post('/displayOptions', (req, res) => {
+    const itemNames = distinctItemNames()
+    const itemTypes = distinctItemTypes()
+    const expenseTypes = distinctExpenseTypes()
+
+    res.status(200).send(itemNames, itemTypes, expenseTypes)
 })
